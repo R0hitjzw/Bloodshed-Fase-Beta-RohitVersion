@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Background Image with GIF</title>
     <link rel="stylesheet" href="./style.css">
-
 </head>
 
 <body class="index">
@@ -17,29 +16,32 @@
         <div class="menuOptions">
             <a href="./core.html" class="menuButton">START</a>
 
-            <button class="muteButton">
-                <img src="./assets/projectImages/muteIcon.png" alt="">
+            <!-- BOTÓN MUTE -->
+            <button class="muteButton" id="muteBtn">
+                <img id="muteIcon" src="./assets/kumite-music.mp3" alt="">
             </button>
 
-            <!-- <button class="unmuteButton muteButtonsHover">
-                <img src="./assets/projectImages/unmuteIcon.png" alt="">
-            </button> -->
+            <!-- MÚSICA -->
+            <audio id="music" src="./assets/kumite-music.mp3" loop></audio>
 
             <div class="trainingHallFameButtonDiv">
                 <a href="./trainingZone.html" class="menuButton">TRAINING ZONE</a>
-
-
                 <a href="hallFame.html" class="menuButton">HALL OF FAME</a>
             </div>
+
             <div id="textoMovimiento">
-                <p>Insert coin to start
+                <p>
+                    Insert coin to start
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Not sure yet? Go to training zone</p>
+                    Not sure yet? Go to training zone
+                </p>
             </div>
+
         </div>
-
-
     </div>
+
+    <!-- SCRIPT -->
+    <script src="MenuMusic.js"></script>
 </body>
 
 </html>

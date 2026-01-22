@@ -1,3 +1,22 @@
+// AUDIO DEL JUEGO
+const music = document.getElementById("music")
+music.volume = 0.3  
+music.muted = localStorage.getItem("muted") === "true" // respeta mute del menú
+
+let musicStarted = false
+
+// función para arrancar música al primer input
+function startMusic() {
+    if (musicStarted || music.muted) return
+    music.play()
+    musicStarted = true
+}
+
+// arrancar música con cualquier interacción del jugador
+window.addEventListener("keydown", startMusic)
+window.addEventListener("mousedown", startMusic)
+
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
