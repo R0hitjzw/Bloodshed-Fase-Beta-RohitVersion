@@ -505,3 +505,29 @@ body.gameGround {
     border-radius: 10px;
     text-align: center;
 }
+
+/* CORE.HTML */
+
+* {
+            box-sizing: border-box;
+}
+
+        html,
+        body.core {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        canvas {
+            display: block;
+        }

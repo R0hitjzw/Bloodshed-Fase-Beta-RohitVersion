@@ -1,6 +1,6 @@
 // AUDIO DEL JUEGO
 const music = document.getElementById("music")
-music.volume = 0.3  
+music.volume = 0.3
 music.muted = localStorage.getItem("muted") === "true" // respeta mute del menú
 
 let musicStarted = false
@@ -34,17 +34,17 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 const gravity = 0.7
 
 const background = new Sprite({
-    position : {
-        x: 0,
-        y: 0
-    },
-    imageSrc : './assets/background/snakeThroneArena.webp'
-} )
-
-const player = new Fighter({    
     position: {
         x: 0,
         y: 0
+    },
+    imageSrc: './assets/background/snakeThroneArena.webp'
+})
+
+const player = new Fighter({
+    position: {
+        x: 450,
+        y: 100
     },
     velocity: {
         x: 0,
@@ -59,7 +59,7 @@ const player = new Fighter({
 const enemy = new Fighter({
 
     position: {
-        x: 400,
+        x: 800,
         y: 100
     },
     velocity: {
@@ -87,46 +87,6 @@ const keys = {
     },
     ArrowLeft: {
         pressed: false
-    }
-}
-
-
-
-function rectangularCollision({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.attackBox.position.x + rectangle1.attackBox.width >=
-        rectangle2.position.x &&
-        rectangle1.attackBox.position.x <=
-        rectangle2.position.x + rectangle2.width &&
-        rectangle1.attackBox.position.y + rectangle1.attackBox.height >=
-        rectangle2.position.y &&
-        rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
-    )
-}
-
-function determineWinner({ player, enemy, timerId }) {
-    clearTimeout(timerId)
-    document.querySelector('#displayText').style.display = 'flex'
-    if (player.health === enemy.health) {
-        document.querySelector('#displayText').innerHTML = 'Empate'
-    } else if (player.health > enemy.health) {
-        document.querySelector('#displayText').innerHTML = 'Jugador 1 gana'
-    } else if (player.health < enemy.health) {
-        document.querySelector('#displayText').innerHTML = 'Jugador 2 gana'
-    }
-}
-
-let timer = 20
-let timerId
-function decreaseTimer() {
-    if (timer > 0) {
-        timerId = setTimeout(decreaseTimer, 1000)
-        timer--
-        document.querySelector("#timer").innerHTML = timer
-    }
-
-    if (timer === 0) {
-        determineWinner({ player, enemy, timerId })
     }
 }
 
@@ -194,7 +154,7 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'd':
         case 'D':
-        keys.d.pressed = true
+            keys.d.pressed = true
             player.lastKey = 'd'
             break
         case 'a':
